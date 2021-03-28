@@ -1,4 +1,4 @@
-from hello_jim import hello_jim
+from hello-jim import hello_jim
 
 # Jim is a good guy, this should work.
 def test_one():
