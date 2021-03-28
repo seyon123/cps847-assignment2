@@ -16,3 +16,14 @@ script: pytest --cov=./ # run tests
 
 after_success:
   - codecov # submit coverage
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "AKIAYAA6BCAJQOWWSV5X"
+  secret_access_key:
+    secure: "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"
+  region: "us-east-2"
+  app: "cps-847-app"
+  env: "cps-847-env"
+  bucket_name: "elasticbeanstalk-us-east-2-549818798099"
