@@ -1,8 +1,8 @@
 language: python
 
 python:
-  - 3.6
-  - 3.7
+# - 3.6
+# - 3.7
   - 3.8
 
 before_install:
@@ -17,17 +17,13 @@ script: pytest --cov=./ # run tests
 after_success:
   - codecov # submit coverage
 
-jobs:
-  include:
-    - stage: deploy
-        python: 3.8
-        deploy:
-          provider: elasticbeanstalk
-          access_key_id: $ACCESS_KEY
-          secret_access_key: $ACCESS_SECRET
-          region: "us-east-2"
-          app: "cps847-app"
-          env: "cps847-env"
-          bucket_name: "elasticbeanstalk-us-east-2-549818798099"
-          on:
-            branch: main
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY
+  secret_access_key: $ACCESS_SECRET
+  region: "us-east-2"
+  app: "cps847-app"
+  env: "cps847-env"
+  bucket_name: "elasticbeanstalk-us-east-2-549818798099"
+  on:
+    branch: main
