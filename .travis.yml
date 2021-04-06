@@ -28,3 +28,4 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-549818798099"
   on:
     branch: main
+
