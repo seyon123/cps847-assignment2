@@ -20,12 +20,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY
-  secret_access_key:
-    secure: $ACCESS_SECRET
+  secret_access_key: $ACCESS_SECRET
   region: "us-east-2"
   app: "cps-847-app"
   env: "cps-847-env"
   bucket_name: "elasticbeanstalk-us-east-2-549818798099"
   on:
     branch: main
-
