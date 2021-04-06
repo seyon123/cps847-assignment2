@@ -1,10 +1,10 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
 # Install dependencies and apache
 RUN apt-get update && apt-get -y install apache2
 
-# Copy index.html into the container
-COPY index.html /var/www/html/
+# Write hello world message
+RUN echo 'Hello World!' > /var/www/html/index.html
 
 # Configure apache
 RUN echo '. /etc/apache2/envvars' > /root/run_apache.sh && \
