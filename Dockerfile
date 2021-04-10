@@ -4,7 +4,10 @@ FROM ubuntu:18.04
 RUN apt-get update && apt-get -y install apache2
 
 # Write hello world message
-RUN echo 'Hello World!' > /var/www/html/index.html
+# RUN echo 'Hello World!' > /var/www/html/index.html
+
+# Copy index.html
+COPY ./index.html /var/www/html/
 
 # Configure apache
 RUN echo '. /etc/apache2/envvars' > /root/run_apache.sh && \
